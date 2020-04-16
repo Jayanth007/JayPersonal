@@ -1,0 +1,5 @@
+<aura:component >
+	 I'll have one with everything
+    <aura:attribute name="myAttribute" type="Integer"/>
+    {!v.myAttribute}
+</aura:component>

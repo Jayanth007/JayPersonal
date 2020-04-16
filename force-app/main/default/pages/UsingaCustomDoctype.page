@@ -1,0 +1,8 @@
+<apex:page docType="xhtml-1.0-strict" title="Strictly XHTML" 
+    showHeader="false" sidebar="false">
+    <h1>This is Strict XHTML!</h1>
+    <p>
+        Remember to close your tags correctly:<br/>
+        <apex:image url="/img/icon-person.gif" alt="Person icon"/>
+    </p>
+</apex:page>

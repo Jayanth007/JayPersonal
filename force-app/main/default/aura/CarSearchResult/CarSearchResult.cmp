@@ -1,0 +1,36 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" extends="c:Base" controller="carSearchcontroller" >
+    <aura:attribute access = "public" type="Car__c[]" name="cars" />
+    <aura:attribute access= "private" type="string" name="carTypeIdComponent" default="" />
+    <aura:attribute access="private"  type="boolean" name="carFound" default="false" />
+    
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <!-- This aura method will be involed by parent component CarSearch
+  and will oass carTypeId, the method will use carTypeId to search
+  all the cars from server with having same carTypeId -->
+    <aura:method name ="searchCars" action="{!c.doSearch}"
+                 description="Get cars fro server based on carTypeId suppied
+                              to this component" access="public">
+        <aura:attribute name="carTypeId" type="string" default="" />        
+    </aura:method>
+    <lightning:layout multipleRows="true" horizontalAlign="center">  
+        <aura:if isTrue="true">
+            <aura:iteration items="{!v.cars}" var="car">
+                <lightning:layoutitem padding="around-small"
+                                      size="12"
+                                      smallDeviceSize="6"
+                                      mediumDeviceSize="4"
+                                      largeDeviceSize="3">
+                    <c:CarTile car="{#car}" />                   
+                </lightning:layoutitem>
+            </aura:iteration>
+            <aura:set attribute="else">
+                <div class="slds-align_absolute-centre">
+                    No cars found
+                </div>         
+            </aura:set>
+        </aura:if>
+        
+        
+    </lightning:layout>
+    
+</aura:component>

@@ -1,0 +1,84 @@
+<apex:page standardController="Account" sidebar="false" setup="true" showHeader="true">
+
+    <apex:pageBlock title="Hello {!$User.FirstName}!"> 
+            You are viewing the {!account.name} account.
+            <apex:detail subject="{!account.ownerId}" relatedList="false" title="false" />
+    </apex:pageBlock> 
+
+
+{!NOW() - $System.OriginDateTime}
+
+{!$CurrentPage.parameters.id}
+{!$Network.Name}
+{!$Organization.Name}
+
+{!$Organization.State}
+{!$ObjectType.Account.Fields.ID.Label}
+{!$Label.site.page_not_found_detail}
+{!$Profile.Id}
+{!$Profile.Name}
+    
+  <h1>Linked</h1>
+  <apex:outputLink value="{!$Page.FromPage}">
+    This is a link to another page.
+    <apex:param name="Jay" value="Name"/>
+  </apex:outputLink>
+
+   <apex:pageMessage severity="info" 
+   strength="1" 
+   summary="{!$Label.site.page_not_found_detail}" 
+   />
+
+ <!--
+    <apex:repeat value="{!$Account.FieldSet.mySpecialFields}" var="field">
+        <apex:outputText value="{!field}" />
+    </apex:repeat>
+-->
+<apex:detail subject="{!account}" relatedList="true"/>
+  Hello {!$User.FirstName}  
+<apex:outputLink value="{!URLFOR($Action.Account.New)}">press</apex:outputLink>
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockButtons >
+<apex:commandButton action="{!URLFOR($Action.Account.New)}" value="Click"/>
+</apex:pageBlockButtons>
+</apex:pageBlock>
+<!--
+<apex:outputText value="{!$Cache.Session.local.default.output}"  />
+-->
+ <apex:outputText label="displaylabelname" id="msgpost" value="Emacs"/>
+
+</apex:form>
+<h2>Global variables API :{!$Api.Partner_Server_URL_390} Session ID:{!$Api.Session_ID} </h2>
+
+    <apex:pageBlock id="theBlock">
+        <apex:pageBlockSection id="theSection" columns="1">
+            <apex:pageBlockSectionItem id="theSectionItem">
+                <apex:outputText id="theText">
+                    Heya!
+                </apex:outputText>
+                
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    <apex:datalist var="acc" value="{!Account.Contacts}">
+  <apex:outputText value="{!acc.FirstName}:" style="color:red"/>
+  <apex:outputText value="{!acc.ID}" style="color:black" />
+</apex:datalist>
+<!--
+  <apex:pageMessage severity="info" 
+   strength="1" 
+   summary="{!$Label.displaylabelname}" 
+   />
+-->
+
+<Script> 
+
+function beforeTextSave() {
+    document.getElementById('{!$Component.msgpost}').value = 
+        myEditor.getEditorHTML();
+}
+
+
+</script>
+</apex:page>

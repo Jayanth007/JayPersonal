@@ -1,0 +1,7 @@
+<apex:page >
+    {!$User.FirstName}
+    {!$System.OriginDateTime}
+    {!$UserRole.LastModifiedById}
+    <apex:outputLink value="{!URLFOR($Action.Account.New)}">Create New Account</apex:outputLink>
+    <apex:outputLink value="{!URLFOR($Action.Account.New)}">New Contact </apex:outputLink>
+</apex:page>

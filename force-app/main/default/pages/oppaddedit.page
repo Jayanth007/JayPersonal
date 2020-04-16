@@ -1,0 +1,18 @@
+<apex:page standardController="opportunity" extensions="oppaddextn" >
+<apex:form id="form" >
+    <apex:pageBlock id="PB1">
+        <apex:pageBlockSection id="PBS1">
+        <apex:inputfield value="{!opp.AccountId}"  />
+        <apex:inputfield value="{!acc.SLA__c}"  />
+          <apex:inputfield value="{!acc.BillingAddress__c}"/>      
+        </apex:pageBlockSection>
+        
+        <apex:pageBlockSection >
+        <apex:commandButton value="update" action="{!Updateacc}"/>
+        
+        </apex:pageBlockSection>
+    
+    </apex:pageBlock>
+
+</apex:form>
+</apex:page>

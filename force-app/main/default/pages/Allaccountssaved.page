@@ -1,0 +1,26 @@
+<apex:page controller="AddmultipleAccountsController">
+    <apex:form >
+    	<apex:pageBlock >
+     		 <apex:pageBlockTable value="{!listAccount}" var="acc">
+        		<apex:column headerValue="Account Name" />
+                 <apex:inputField value="{!acc.Name}"  />
+                 <apex:column />
+          		<apex:column headerValue="Account Number" />
+                 <apex:inputField value="{!acc.AccountNumber}"  />
+                 <apex:column />  	
+                 <apex:column headerValue="Account Type" />
+                 <apex:inputField value="{!acc.Type}"  />
+                 <apex:column />
+                   <apex:column headerValue="Industry" />
+                 <apex:inputField value="{!acc.Industry}"  />
+                 <apex:column />
+        	</apex:pageBlockTable> 
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Add one or more accounts" action="{!AddAccount}" />
+            
+            <apex:commandButton value="Save Accounts" action="{!SaveAccount}" />
+            
+            </apex:pageBlockButtons>
+     	 </apex:pageBlock>>
+    </apex:form>>
+</apex:page>

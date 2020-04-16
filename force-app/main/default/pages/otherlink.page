@@ -1,0 +1,12 @@
+<apex:page standardController="Account" >
+    <apex:form >
+    <apex:pageBlock >
+        
+     <apex:commandLink value="Back to SFDC99" target="http://www.sfdc99.com" />
+        <apex:outputLink value="{!URLFOR($Action.Account.New)}">
+    Create New Account
+</apex:outputLink>
+        
+        </apex:pageBlock>
+        </apex:form>
+</apex:page>

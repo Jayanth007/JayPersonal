@@ -1,0 +1,4 @@
+<apex:page standardController="Account">
+   This is my <i>page</i>. <br/>
+   <c:myComponent />
+</apex:page>

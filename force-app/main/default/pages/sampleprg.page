@@ -1,0 +1,15 @@
+<apex:page controller="testclass">
+<apex:form >
+<apex:pageBlock >
+Order Status:<apex:selectList id="countries" value="{!selectedValue}" size="1" required="true" >
+<apex:selectOptions value="{!options}"/>
+ <apex:actionSupport event="onchange" rerender="sample1"/>
+</apex:selectList>
+<apex:PageblockSection title="sample" columns="1" id="sample1" >
+               <apex:OutputLabel >Selected Value</apex:OutputLabel>
+               {!selectedValue}
+               </apex:PageblockSection>
+</apex:pageBlock>
+
+</apex:form>
+</apex:page>

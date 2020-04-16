@@ -1,0 +1,13 @@
+<apex:page standardController="Account">
+  <h1>      Hello from developer console    </h1>  
+    <p>
+        Sample example for standard controller for account
+    </p>
+    <apex:form >
+   Name : <apex:outputField value="{!Account.Name}" />
+   AccountNumber : <apex:outputField value="{!Account.AccountNumber}" />
+    Industry :<apex:inputField value="{!Account.Industry}" />
+    Type :<apex:inputField value="{!Account.Type}" />
+ 
+        </apex:form>
+</apex:page>

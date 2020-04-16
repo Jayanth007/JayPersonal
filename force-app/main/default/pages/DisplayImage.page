@@ -1,0 +1,7 @@
+<apex:page showHeader="false" standardController="Contact">
+    
+        <apex:form >
+            <apex:image url="https://ap2.salesforce.com/sfc/p/28000001jY6l/a/28000000HKW8/sYa5yw1nIaOhKT5ogpH2TfKGYKkDzNI9je3YDsSWPD8"/>
+    </apex:form>
+  
+</apex:page>

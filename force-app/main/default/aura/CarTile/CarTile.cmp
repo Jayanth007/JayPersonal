@@ -1,0 +1,19 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<aura:attribute name="car" type="sObject" access="public"
+                    default="{
+                             'sObjectType' : 'Car__c',
+                             'Name' :'Jay',
+                             'Picture__c' :'/resource/cars/luxury/ford_mustang.jpeg'
+                             }" />
+     <lightning:button variant="neutral" class="tile" >
+        <!-- <img src="{!v.car.Picture__c}"/> -->
+        <!-- <img src="{!$Resource.cars + '/luxury/ford_mustang.jpeg'}"/> -->
+    
+         <div style="{# 'background-image:url(' + v.car.Picture__c + ')'}" class="innertile" >
+             <div class="lower-third">
+                 <h1 class="slds-truncate">{!v.car.contact__r.Name}</h1>
+             </div>
+         </div>
+    
+    </lightning:button>                        
+</aura:component>

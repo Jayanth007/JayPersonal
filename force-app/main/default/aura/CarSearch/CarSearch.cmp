@@ -1,0 +1,14 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <!-- searchFormSubmit event handler to call aura method 'searchCars' of
+     CarSearchResult component -->
+    <aura:handler name="searchFormSubmit" event="c:SearchFormSubmitEvent" action="{!c.doFormSubmit}" />
+    
+    <!-- Top CarSearchForm Component -->
+    <lightning:card title="Search Your Car" class="bottom_margin" >
+        <c:CarSearchForm/>
+    </lightning:card>
+    <!-- carsearchresult component which has CarTile component nested -->
+      <lightning:card title="Results" class="bottom_margin" >
+        <c:CarSearchResult aura:id="carSearchResult"/>
+    </lightning:card>
+</aura:component>

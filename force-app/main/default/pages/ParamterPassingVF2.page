@@ -1,0 +1,9 @@
+<apex:page controller="SingleController">
+    <apex:pageBlock >
+    <!-- Getting values from the controller(V.V.V. IMP)	
+Welcome {!name}
+-->Welcome {!name}
+        <!-- 1---getting values from the URL -->
+       <!-- {!$CurrentPage.parameters.UIname} -->
+    </apex:pageBlock>
+</apex:page>

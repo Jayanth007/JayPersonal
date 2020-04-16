@@ -1,0 +1,8 @@
+<apex:page controller="HomePageForSurvey" sidebar="false" showHeader="false" >
+    <apex:form >
+     <p>Are you interested to the takehe survey </p>
+        <br/>
+     <apex:commandButton action="{!yes}" value="Yes" id="yesButton"/>
+     <apex:commandButton action="{!yes}" value="no" id="noButton"/> 
+    </apex:form>    
+</apex:page>

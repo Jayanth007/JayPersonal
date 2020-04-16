@@ -1,0 +1,22 @@
+<apex:page >
+ <apex:includeLightning />
+
+ <div style="width:30%;height:100px;" id="FlipcardContainer" />
+
+ <script>
+ $Lightning.use("c:LightningOutContainerApp", function() {
+ $Lightning.createComponent("c:FlipCard",
+ { 
+ borderColor : "#16325c", 
+ bgColor : "#16325c" ,
+ fontColor : "#FFF",
+ frontText : "What's cool about Lightning Component Development",
+ backText : "You dont need to enable Lightning experience, It will work on Classic Instance as well"
+ },
+ "FlipcardContainer",
+ function(cmp) {
+ console.log('Component created, do something cool here');
+ });
+ });
+ </script>
+</apex:page>

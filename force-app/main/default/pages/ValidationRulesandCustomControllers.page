@@ -1,0 +1,15 @@
+<apex:page controller="MyController111" tabStyle="Account">
+  <apex:messages />
+  <apex:form >
+   <apex:pageBlock title="Hello {!$User.FirstName}!">
+     This is your new page for the {!name} controller. <br/>
+     You are viewing the {!account.name} account.<br/><br/>
+     Change Account Name: <p></p>
+     <apex:inputField value="{!account.name}"/> <p></p>
+     Change Number of Locations:
+     <apex:inputField value="{!account.NumberofLocations__c}" id="Custom_validation"/> 
+         <p>(Try entering a non-numeric character here, then hit save.)</p><br/><br/>
+     <apex:commandButton action="{!save}" value="Save New Account Name"/>
+   </apex:pageBlock>
+  </apex:form>
+</apex:page>

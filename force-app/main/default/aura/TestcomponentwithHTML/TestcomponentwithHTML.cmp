@@ -1,0 +1,19 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    hello world
+    <p class="paragraph">This is paragraph test</p>
+    <div>
+        <p class="paragraph1">this is inside the loop </p>
+        
+    </div>
+    <div>
+        <div>
+            <p class="paragraph2">
+                Inside the nested Div
+            </p>
+        </div>
+    </div>
+    <lightning:formattedText value="Hello world for my component" />
+    
+    <button >This is HTML button</button>
+    <lightning:button variant="brand" label ="Lightning button"/>
+</aura:component>

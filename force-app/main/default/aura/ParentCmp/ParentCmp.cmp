@@ -1,0 +1,13 @@
+<!--ParentCmp.cmp-->
+<aura:component >
+    <aura:attribute name="message" type="String" 
+                    default="------ Hello From Parent -----"/>
+    <c:ChildCmp aura:id="childComponent"/>
+   
+    <div class="slds-m-around_xx-large">
+        <lightning:button variant="brand" label="Call Aura Method" 
+                          onclick="{!c.callAuraMethod}" />
+        <BR></BR> <BR></BR>
+        <p>{!v.message}</p>
+    </div>
+</aura:component>

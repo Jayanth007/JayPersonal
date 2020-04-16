@@ -1,0 +1,29 @@
+<apex:page controller="sendEmail">
+    <apex:messages />
+    <apex:pageBlock title="Send an Email to Your 
+            {!account.name} Representatives">
+        <p>Fill out the fields below to test how you might send an email to a user.</p>
+        <br />
+        <apex:dataTable value="{!account.Contacts}" var="contact" border="1">
+            <apex:column >
+                <apex:facet name="header">Name</apex:facet>
+                {!contact.Name}
+            </apex:column>
+            <apex:column >
+                <apex:facet name="header">Email</apex:facet>
+                {!contact.Email}
+            </apex:column>
+        </apex:dataTable>
+    
+        <apex:form >
+        <br /><br />
+            <apex:outputLabel value="Subject" for="Subject"/>:<br />     
+            <apex:inputText value="{!subject}" id="Subject" maxlength="80"/>
+            <br /><br />
+            <apex:outputLabel value="Body" for="Body"/>:<br />     
+            <apex:inputTextarea value="{!body}" id="Body"  rows="10" cols="80"/>           
+            <br /><br /><br />
+            <apex:commandButton value="Send Email" action="{!send}" /> 
+        </apex:form>
+    </apex:pageBlock>
+</apex:page>

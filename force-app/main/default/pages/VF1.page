@@ -1,0 +1,6 @@
+<apex:page >
+    <apex:outputLink value="/apex/VF2">Click Here -> Second Page
+    	<apex:param name="firstName" value="Jay"/>
+        <apex:param name="last" value="Buddi"/>
+    </apex:outputLink>
+</apex:page>

@@ -1,0 +1,21 @@
+<apex:page docType="html-5.0" standardController="Account">
+    <style>
+        .mypage .quote {
+            margin: 12px 0;
+            font-size: 64px;
+            text-align: center;
+        }
+        .mypage .delta {
+            font-size: 24px;
+            text-align: center;
+            color: green;
+        }
+    </style>
+    
+    <div class="mypage">
+        Stock:
+        <div class="quote">$42.00</div>
+        <div class="delta">+1.32%</div>
+    </div>
+    
+</apex:page>

@@ -1,0 +1,23 @@
+<apex:page controller="ChildRemoteController" >
+    <script type="text/javascript">
+  
+          function SayHelloremoting(name) {  
+            Visualforce.remoting.Manager.invokeAction(
+            '{!$RemoteAction.ChildRemoteController.sayHello}', 
+            name.value, 
+            function(result, event){
+                if (event.status) {
+                      document.getElementById("resultusingremoting").innerHTML = result;
+                }
+            }, 
+            {escape: true}
+        );
+      
+    </script>
+
+    <button onclick="sayHello('Jay');">Say Hello</button><br/>
+    <button onclick="SayHelloremoting('Jayanth');">Say Hell0 to remoting</button><br/>
+    <div id="result">[Results]</div>
+    <div id="resultusingremoting">[ResultsRemote]</div>
+    
+</apex:page>

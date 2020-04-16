@@ -1,0 +1,28 @@
+<apex:page controller="wrapCustomObj" >
+    <apex:form >
+        <apex:pageBlock title="Employee Details">
+            <apex:pageBlockSection title="List of Employee" id="details">
+               <apex:pageBlockTable value="{!empDetails}" var="e">
+                   <apex:column >
+                       <apex:inputCheckbox value="{!e.selected}" />
+                   </apex:column>
+                   <apex:column value="{!e.empDet.name}"  />
+                   <apex:column value="{!e.empDet.Salary__c}"  />                
+                </apex:pageBlockTable>
+ </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton action="{!previous}" value="Previous" reRender="details" />
+                <apex:commandButton action="{!next}" value="Next" reRender="details" />
+                <apex:commandButton action="{!fpage}" value="First Page" reRender="details" />
+               <apex:commandButton action="{!lpage}" value="Last Page" reRender="details" />
+      
+            </apex:pageBlockButtons>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton action="{!DisplayDetails}" value="Details" />
+            
+            </apex:pageBlockButtons>
+        
+        
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

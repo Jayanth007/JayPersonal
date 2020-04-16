@@ -1,0 +1,4 @@
+<apex:page standardController="Case" contentType="application/msWord#msword.doc">
+    <apex:detail />
+ 
+</apex:page>

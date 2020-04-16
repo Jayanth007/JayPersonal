@@ -1,0 +1,4 @@
+<apex:page controller="CommonControl"  >
+
+{!toPageValue}
+</apex:page>

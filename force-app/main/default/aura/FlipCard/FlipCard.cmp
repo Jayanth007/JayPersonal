@@ -1,0 +1,18 @@
+<aura:component >
+    <aura:attribute type="string" name="bgColor" />
+    <aura:attribute type="string" name="fontColor" default="#000"/>
+    <aura:attribute type="string" name="borderColor" default="#000"/>
+    <aura:attribute type="string" name="frontText" />
+    <aura:attribute type="string" name="backText" /> 
+    <aura:attribute type="boolean" name="isVerticalFlip" default="false" description="By default its Horizontal flip" />
+<div class="{! 'slds flip-container ' + (v.isVerticalFlip == false ? 'horizontal' : 'vertical') }" style="{! 'background-color:'+ v.bgColor+'; color: '+ v.fontColor+';border : 1px solid '+ v.borderColor}">
+<div class="flipper">
+<div class="front">
+                {!v.frontText}
+            </div>
+<div class="back">
+                {!v.backText}
+            </div>
+        </div>
+    </div>
+</aura:component>

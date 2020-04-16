@@ -1,0 +1,17 @@
+<apex:page controller="OpportunityExtension">
+    <apex:form >    
+
+        
+        <apex:pageBlock >
+            
+        <apex:pageBlockSection >
+        <apex:selectList value="{!selectedAcc}" size="1">    
+              <apex:selectOptions value="{!opportunities}"/>
+            <apex:actionSupport event="onchange" action="{!getOppDetails}"/>
+        </apex:selectList>
+        </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        
+    </apex:form>
+</apex:page>

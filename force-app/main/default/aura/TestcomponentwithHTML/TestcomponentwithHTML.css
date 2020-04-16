@@ -1,0 +1,11 @@
+.THIS.paragraph {
+    text-shadow:1px 2px red;
+}
+.THIS .paragraph1{
+    color:green;
+    font-style:bold;
+}
+.THIS .paragraph2{
+    color:white;
+    font-style:bold;
+}

@@ -1,0 +1,8 @@
+<!--c:domLocker-->
+<aura:component>
+    <div id="myDiv" aura:id="div1">
+        <p>See how Lightning Locker restricts DOM access</p>
+    </div>
+    <lightning:button name="myButton" label="Peek in DOM"
+                aura:id="button1" onclick="{!c.peekInDom}"/>
+</aura:component>

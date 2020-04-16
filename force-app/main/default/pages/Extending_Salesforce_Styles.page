@@ -1,0 +1,4 @@
+<apex:page >
+    <apex:stylesheet value="{!$Resource.TestStyles}"/>
+    <apex:outputText value="Styled Text in a sample style class" styleClass="sample"/>
+</apex:page>

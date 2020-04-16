@@ -1,0 +1,3 @@
+h1 { color: #f00; }
+p { background-color: #eec; }
+newLink { color: #f60; font-weight: bold; }

@@ -1,0 +1,9 @@
+<apex:page controller="Pricematrix_Matrixdata_controller" >
+<apex:form >
+        <apex:pageBlock id="pb">
+            <apex:pageBlockTable value="{!PM}" var="a">
+                <apex:column value="{!a.Matrix_Datas__r[0].name}"/>
+            </apex:pageBlockTable>
+            </apex:pageBlock>
+</apex:form>
+</apex:page>

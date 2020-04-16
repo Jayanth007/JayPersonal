@@ -1,0 +1,10 @@
+<apex:page showHeader="true" tabstyle="Case">
+    <apex:pageMessage severity="error" rendered="{!$User.UITheme = 'Theme3' && 
+                                                    $User.UIThemeDisplayed != 'Theme3'}">
+    We've noticed that the new look and feel is enabled for your organization. 
+    However, you can't take advantage of its brilliance. Please check with 
+    your administrator for possible reasons for this impediment.
+    </apex:pageMessage>
+    <apex:ListViews type="Case" rendered="{!$User.UITheme = 'Theme3' && 
+                                           $User.UIThemeDisplayed = 'Theme3'}"/>
+</apex:page>

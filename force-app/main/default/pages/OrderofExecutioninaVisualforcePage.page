@@ -1,0 +1,6 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>two types of requests </h1>
+  This is your new Page: OrderofExecutioninaVisualforcePage
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

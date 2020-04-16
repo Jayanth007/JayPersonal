@@ -1,0 +1,4 @@
+<apex:page controller="CommonControllerForVFPages" >
+    Hi this is display page {!$CurrentPage.parameters.Myname}
+    <apex:detail />
+</apex:page>

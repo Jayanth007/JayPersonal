@@ -1,0 +1,32 @@
+<apex:page showHeader="false" standardStylesheets="false"
+    standardController="Account" extensions="SaveAsPdfExtension"
+    contentType="{! renderedContentType }" renderAs="{! renderingService }">
+
+    <!-- 
+    This page must be called with an Account ID in the URL, e.g.:
+    https://<salesforceInstance>/apex/AccountContactsPdf?id=001D000000JRBet
+    -->
+        
+    <apex:form rendered="{! renderingService != 'PDF' }"
+               style="text-align: right; margin: 10px;">
+        <apex:commandLink action="{! saveToPdf }" value="Save to PDF">
+            <apex:param assignTo="{! renderedFileName }" value="Contact-List.pdf"/>
+        </apex:commandLink>
+        <hr/>
+    </apex:form>
+    
+    <h1>Contacts for {! Account.Name}</h1>
+    
+    <apex:dataTable value="{! Account.Contacts }" var="contact">
+        <apex:column headerValue="Name"  value="{! contact.Name  }"/>
+        <apex:column headerValue="Title" value="{! contact.Title }"/>
+        <apex:column headerValue="Phone" value="{! contact.Phone }"/>
+        <apex:column headerValue="Email" value="{! contact.Email }"/>
+    </apex:dataTable>
+
+    <hr/>
+    <!-- A little bit of info about the page's rendering; 
+         see how it changes when saved as a PDF. -->
+    contentType: <apex:outputText value=" {! renderedContentType }"/><br/>
+    renderingService: <apex:outputText value=" {! renderingService }"/><br/>
+</apex:page>

@@ -1,0 +1,9 @@
+<apex:page controller="retrieveCase" tabStyle="Case">
+    <apex:pageBlock >
+        {!contactName}'s Cases
+        <apex:pageBlockTable value="{!cases}" var="c">     
+            <apex:column value="{!c.status}"/>
+            <apex:column value="{!c.subject}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

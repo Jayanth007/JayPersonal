@@ -1,0 +1,5 @@
+<apex:page controller="MyController123">
+    <apex:pageBlock title="Hello {!$User.FirstName}!">
+        This is your new page for the {!account.name} controller.
+    </apex:pageBlock>
+</apex:page>

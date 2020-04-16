@@ -1,0 +1,17 @@
+<apex:page standardController="opportunity" extensions="oppaddextn" >
+ <apex:form id="form" >
+    <apex:pageBlock id="PB1">
+        <apex:pageBlockSection id="PBS1">
+        <apex:outputField value="{!opp.AccountId}"  />
+        <apex:outputField value="{!opp.CloseDate}" />
+        <apex:outputfield value="{!acc.BillingAddress__c}"/> 
+        <apex:outputField value="{!acc.SLA__c}"  />
+           
+        </apex:pageBlockSection>
+        
+        
+    
+    </apex:pageBlock>
+
+</apex:form>
+</apex:page>

@@ -1,0 +1,51 @@
+<aura:component extends="c:Base" controller="CarTypeSearch" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:attribute name="buttonLabel" type="string" default="searchattri" />
+    <aura:attribute name="HashLabel" type="string" default="New button Hash" />
+    <!-- Attributes to control visibility of new button -->
+    <aura:attribute name="showNew" type="Boolean" default="true" />
+    <!-- <aura:attribute name="carTypes" type="string[]" default="Sports Car,Audi,Benz"/>
+    Load the values from the Init -->    
+    <aura:attribute name="carTypes" type="Car_Type__c[]" />
+    <!-- below are two system events -->
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <!-- <aura:handler name="render" action="{!c.handleRender}" value="{!this}" /> -->  
+    <!-- this event will be fired when the user will click on 
+      search button and will select cartypeid  -->
+    <aura:registerEvent name="searchFormSubmit" type="c:SearchFormSubmitEvent" />
+    
+    <lightning:layout horizontalAlign="center">
+        <lightning:layoutItem padding="around-medium">
+            <lightning:select name="selectItem" aura:id="carTypeList" 
+                              label="All Types" variant ="label-hidden" value="default">
+                <option value="default" text="All Types" /> 
+                <aura:iteration items="{!v.carTypes}" var="cartype">
+                    <option  text="{!cartype.Name}" value="{!cartype.Id}" />       
+                </aura:iteration>
+                <!--
+                <aura:iteration items ="{!v.carTypes}" var="carType">
+                    <option value="{!carType}" text="{!carType.Name}" />                
+                </aura:iteration> 
+                -->           
+            </lightning:select>       
+        </lightning:layoutItem>
+        
+        <lightning:layoutItem padding ="around-medium">
+            <!--     <lightning:button label="Search" variant="brand" onclick="{!c.onFormSubmit}"/>  -->
+            <!-- VALUE PROVIDERS By !   <lightning:button label="{!v.buttonLabel}" variant="brand" /> -->
+            <lightning:button label="Search" variant="brand" onclick="{!c.onClickSearch}"/>
+            <!-- <lightning:button variant="neutral" label="Toggle button" onclick="{!c.toggleButton}" /> -->
+            <!-- display new button on availability -->
+            <lightning:button variant="neutral" label="New" onclick="{!c.createRecord}" />
+            <aura:if istrue="{!v.showNew}">
+                <!--  <lightning:button variant="neutral" label="label" oncick="{!c.createRecord}" />  -->
+                <!--  VALUE PROVIDERS BY HASH <lightning:button variant="neutral" label="{#HashLabel}" />  -->
+                <lightning:button variant="brand" label="New" />
+                <!--
+                <aura:set attribute="else">
+                    new button cant be editable
+                </aura:set>
+                  -->
+            </aura:if>  
+        </lightning:layoutItem>   
+    </lightning:layout>   
+</aura:component>

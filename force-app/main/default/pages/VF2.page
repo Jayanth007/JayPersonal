@@ -1,0 +1,4 @@
+<apex:page controller="SameController">
+    Hello {!firstName}
+    {!last}
+</apex:page>

@@ -1,0 +1,21 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global" controller="EinsteinVision_Admin">
+    
+    <aura:attribute name="files" type="Object[]"/>
+    <aura:attribute name="spinnerWaiting" type="Boolean" default="false"/>
+    <aura:attribute name="image" type="String" />
+    <aura:attribute name="recordId" type="Id" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.onGetImageUrl}" />
+    
+    <div>
+        <lightning:input aura:id="fileInput" type="file" name="file" multiple="false" accept="image/*;capture=camera" files="{!v.files}" onchange="{! c.onReadImage }"
+                         label="Upload a cat image:"/>
+        
+        <img src="{!v.image}"/>  
+        
+        <aura:if isTrue="{! v.spinnerWaiting }">
+            <lightning:spinner size="medium"/>
+        </aura:if>            
+    </div>
+    
+</aura:component>

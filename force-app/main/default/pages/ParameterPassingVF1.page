@@ -1,0 +1,13 @@
+<apex:page controller="SingleController">
+    <apex:form >
+        <apex:pageBlock >
+        	<apex:pageBlockSection columns="2">
+            	<apex:outputText value="Enter your name"></apex:outputText>
+                <apex:inputText id="nameId" value="{!name}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="2">
+            	<apex:commandButton id="buttonId1" action="{!goToSecondPage}" value="Submit"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,60 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" controller="EinsteinVision_Admin">
+    
+    <aura:attribute name="datasets" type="EinsteinVision_Dataset[]"></aura:attribute>
+    <aura:attribute name="spinnerWaiting" type="Boolean" default="false"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.onLoadDatasets}" />
+    
+    <div>
+        <lightning:layout verticalAlign="end" class="slds-m-around--small">
+            <lightning:layoutitem flexibility="grow">
+                <lightning:input type="URL" label="ZIP file url:" aura:id="zipUrl" value="" />
+            </lightning:layoutitem>
+            <lightning:layoutitem >
+                <lightning:button onclick="{!c.onCreateDataset}">Create Dataset</lightning:button>
+                <lightning:button onclick="{!c.onLoadDatasets}">Refresh Datasets</lightning:button>
+            </lightning:layoutitem>
+        </lightning:layout>
+        
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+            <thead>
+                <tr class="slds-text-title--caps">
+                    <th scope="col">
+                        <div class="slds-truncate" title="Dataset Name">Dataset Name</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate" title="Dataset Labels">Dataset Labels</div>
+                    </th>
+                    <th scoe="col">
+                        <div class="slds-truncate" title="Actions">Actions</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.datasets}" var="dataset">
+                    <tr>
+                        <td scope="row" data-label="Dataset Name">
+                            <div class="slds-truncate" title="{!dataset.name}">{!dataset.name}</div>
+                        </td>
+                        <td scope="row" data-label="Dataset Labels">
+                            <aura:iteration items="{!dataset.labelSummary.labels}" var="label">
+                                {!label.name}&nbsp;({!label.numExamples})<br></br>
+                            </aura:iteration>
+                        </td>
+                        <td scope="row" data-label="Actions">
+                            <div class="slds-truncate">
+                                <lightning:button onclick="{!c.onTrainDataset}" value="{!dataset.id}" variant="brand">Train</lightning:button>
+                                <lightning:button onclick="{!c.onDeleteDataset}" value="{!dataset.id}" variant="destructive">Delete</lightning:button>
+                            </div>
+                        </td>
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+        
+        <aura:if isTrue="{!v.spinnerWaiting}">
+            <lightning:spinner size="medium" alternativeText="Loading data..." />
+        </aura:if>
+    </div>
+    
+</aura:component>

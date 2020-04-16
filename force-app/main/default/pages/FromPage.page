@@ -1,0 +1,11 @@
+<apex:page controller="CommonControl" >
+    
+    <form id="PostFromPage" method="GET" action="ToPage" >
+        <input type="hidden" name="payloadbase64" value="{!strInputFld}"  />    
+        <button type="submit">
+            Post Submit 
+        </button>
+    </form>		
+    
+    
+</apex:page>

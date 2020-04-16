@@ -1,0 +1,39 @@
+<apex:page controller="OpportunityAddressController">
+ <script> 
+    function jsMethod(){
+        alert('shannu');
+      
+        actionFunc();
+          alert('Account Created');
+     }
+ 
+    <apex:form >
+    <apex:pageBlock id="primary">
+        <apex:pageBlockSection title="Account Information">
+            <apex:outputField value="{!account.BillingCity}" />
+            <apex:outputField value="{!account.BillingCountry}" />
+            <apex:outputField value="{!account.BillingPostalCode}" />
+            <apex:outputField value="{!account.BillingState}" />
+        </apex:pageBlockSection>   
+        </apex:pageBlock>
+        
+        <apex:pageBlock >
+        <apex:pageBlockSection title="New Address Information">
+            <apex:inputField id="address" value="{!account.BillingCity}"> <apex:param name="newcity" value="" assignTo="{!newcity}"/> </apex:inputField>
+            <apex:inputField value="{!account.BillingCountry}" ><apex:param name="newcity" value="" assignTo="{!newcountry}"/> </apex:inputField>
+            <apex:inputField value="{!account.BillingPostalCode}" ><apex:param name="newcity" value="" assignTo="{!newpostal}"/> </apex:inputField> 
+            <apex:inputField value="{!account.BillingState}" > <apex:param name="newcity" value="" assignTo="{!newstate}"/> </apex:inputField>
+        </apex:pageBlockSection>   
+        <apex:commandButton value="update" onclick="jsMethod()" />
+    </apex:pageBlock>
+    
+    </apex:form>
+    </script>
+    <apex:form >
+        <apex:actionFunction action="{!updateAccount}" name="actionFunc" rerender="primary">
+        </apex:actionFunction>
+    </apex:form>
+    
+    
+     
+</apex:page>

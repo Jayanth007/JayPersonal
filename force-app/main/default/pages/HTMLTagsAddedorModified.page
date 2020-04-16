@@ -1,0 +1,5 @@
+<apex:page showHeader="false" applyHtmlTag="false">
+<html>
+    <apex:includeScript value="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"/>
+</html>
+</apex:page>

@@ -1,0 +1,55 @@
+<apex:page showHeader="false" standardStylesheets="false" 
+    controller="SaveToPDF" renderAs="{! renderAs }">
+
+<apex:form rendered="{! renderAs != 'PDF' }" style="text-align: right; margin: 10px;">
+    <div><apex:commandLink action="{! print }" value="Save to PDF"/></div>
+    <hr/>
+</apex:form>
+
+<h1>PDF Fonts Test Page</h1>
+
+<p>This text, which has no styles applied, is styled in the default font for the 
+   Visualforce PDF rendering engine.</p>
+
+<p>The fonts available when rendering a page as a PDF are as follows. The first 
+listed <code>font-family</code> value for each typeface is the recommended choice.</p>
+
+<table border="1" cellpadding="6">
+<tr><th>Font Name</th><th>Style <code>font-family</code> Value to Use (Synonyms)</th></tr>
+<tr><td><span style="font-family: Arial Unicode MS; font-size: 14pt; ">Arial 
+    Unicode MS</span></td><td><ul>
+   <li><span style="font-family: Arial Unicode MS; font-size: 14pt;">Arial Unicode MS</span></li>
+    </ul></td></tr>
+<tr><td><span style="font-family: Helvetica; font-size: 14pt;">Helvetica</span></td>
+    <td><ul>
+   <li><span style="font-family: sans-serif; font-size: 14pt;">sans-serif</span></li>
+   <li><span style="font-family: SansSerif; font-size: 14pt;">SansSerif</span></li>
+   <li><span style="font-family: Dialog; font-size: 14pt;">Dialog</span></li>
+    </ul></td></tr>
+<tr><td><span style="font-family: Times; font-size: 14pt;">Times</span></td><td><ul>
+   <li><span style="font-family: serif; font-size: 14pt;">serif</span></li>
+   <li><span style="font-family: Times; font-size: 14pt;">Times</span></li>
+</ul></td></tr>
+<tr><td><span style="font-family: Courier; font-size: 14pt;">Courier</span></td>
+    <td><ul>
+    <li><span style="font-family: monospace; font-size: 14pt;">monospace</span></li>
+    <li><span style="font-family: Courier; font-size: 14pt;">Courier</span></li>
+    <li><span style="font-family: Monospaced; font-size: 14pt;">Monospaced</span></li>
+    <li><span style="font-family: DialogInput; font-size: 14pt;">DialogInput</span></li>
+</ul></td></tr>
+</table>
+
+<p><strong>Notes:</strong>
+<ul>
+<li>These rules apply to server-side PDF rendering. You might see different results 
+    when viewing this page in a web browser.</li>
+<li>Text styled with any value besides those listed above receives the default font 
+    style, Times. This means that, ironically, while Helvetica's synonyms render as 
+    Helvetica, using "Helvetica" for the font-family style renders as Times. 
+    We recommend using "sans-serif".</li>
+<li>Arial Unicode MS is the only multibyte font available, providing support for the 
+    extended character sets of languages that don't use the Latin character set.</li>
+</ul>
+</p>
+ 
+</apex:page>

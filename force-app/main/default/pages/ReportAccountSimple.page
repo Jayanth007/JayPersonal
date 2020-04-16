@@ -1,0 +1,48 @@
+<apex:page title="Account Summary" tabStyle="Account"
+    controller="PdfEmailerController">
+
+    <apex:pageMessages />
+
+    <apex:form >
+        <apex:pageBlock title="Account Summary">
+    
+        <p>Select a recently modified account to summarize.</p>
+        <p/>
+        
+        <apex:pageBlockSection title="Report Format">
+        
+            <!-- Select account menu -->
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel for="selectedAccount" value="Account"/> 
+                <apex:selectList id="selectedAccount" value="{! selectedAccount }" 
+                                 size="1">
+                    <apex:selectOption /> <!-- blank by default -->
+                    <apex:selectOptions value="{! recentAccounts }" />
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+
+            <!-- Select report format menu -->
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel for="selectedReport" value="Summary Format"/> 
+                <apex:selectList id="selectedReport" value="{! selectedReport }" 
+                                 size="1">
+                    <apex:selectOptions value="{! reportFormats }" />
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+
+            <!-- Email recipient input field -->
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel for="recipientEmail" value="Send To"/> 
+                <apex:inputText value="{! recipientEmail }" size="40"/>
+            </apex:pageBlockSectionItem>
+
+        </apex:pageBlockSection>
+            
+        <apex:pageBlockButtons location="bottom">
+            <apex:commandButton action="{! sendReport }" value="Send Account Summary" />
+        </apex:pageBlockButtons>
+    
+    </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

@@ -1,0 +1,17 @@
+<apex:page docType="html-5.0" applyHtmlTag="false" applyBodyTag="false"
+           showHeader="false" sidebar="false" standardStylesheets="false"
+           title="Unused Title">
+<html>
+    
+    <head>
+        <title>HTML5 Container Page</title>
+    </head>
+    
+    <body>
+        <h1>An Almost Empty Page</h1>
+  
+        <p>This is a very simple page.</p>
+    </body>
+    
+</html>
+</apex:page>

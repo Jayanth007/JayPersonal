@@ -1,0 +1,15 @@
+<apex:page controller="CommonControllerForVFPages" >
+    <apex:pageBlock >
+    <apex:form >
+        <!--
+     <form id="PostFromPage" method="POST" action="doPost" >
+     <apex:inputField label="FirstName" value="{!FirstName}"  />
+         
+ -->
+        <apex:inputtext label="FirstName" value="{!FirstName}"  />
+        <apex:outputText label="DisplayName" value="{!FirstName}"  />
+        <apex:outputLink value="/apex/Displaypage"  >submit<apex:param name="MyName" value="{!FirstName}"/>     </apex:outputLink>
+        </apex:form>
+    </apex:pageBlock>
+    
+</apex:page>

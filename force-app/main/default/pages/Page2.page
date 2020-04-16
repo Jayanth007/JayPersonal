@@ -1,0 +1,10 @@
+<apex:page controller="wrapCustomObj">
+<apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockTable value="{!SelectEmpDetails}" var="e">
+            <apex:column value="{!e.empDet.name}"/>
+            <apex:column value="{!e.empDet.Salary__c}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>
