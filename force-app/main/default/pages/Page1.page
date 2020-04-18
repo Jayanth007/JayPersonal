@@ -1,5 +1,6 @@
 <apex:page controller="wrapCustomObj" >
     <apex:form >
+        Hi
         <apex:pageBlock title="Employee Details">
             <apex:pageBlockSection title="List of Employee" id="details">
                <apex:pageBlockTable value="{!empDetails}" var="e">
