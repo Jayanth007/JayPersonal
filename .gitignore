@@ -33,3 +33,8 @@ Thumbs.db
 ehthumbs.db
 [Dd]esktop.ini
 $RECYCLE.BIN/
+
+#Remove not required files
+.vscode/
+config/
+scripts/
