@@ -1,5 +1,29 @@
 {
-  "orgName": "Demo company",
-  "edition": "Developer",
-  "features": []
+  "orgName": "Jay Scratch Orgs",
+  "edition": "Enterprise",
+  "features": [
+        "Communities",
+        "MultiCurrency" , 
+        "ContactsToMultipleAccounts",
+        "CascadeDelete",
+        "Communities",
+        "PersonAccounts",      
+        "StateAndCountryPicklist",
+        "Entitlements",
+        "LiveAgent"
+    ],
+  "settings": {
+      "orgPreferenceSettings": {
+          "networksEnabled": true,
+          "s1DesktopEnabled": true,
+          "s1EncryptedStoragePref2": false
+      },
+      "omniChannelSettings": {
+          "enableOmniChannel": true
+      },
+
+      "caseSettings": {
+          "systemUserEmail": "jayanth.thathapudi@gmail.com"
+      }
+  }
 }
