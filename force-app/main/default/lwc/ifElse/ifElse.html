@@ -1,0 +1,18 @@
+<template>
+  <div class="slds-a-around-small">
+    <lightning-button label="show alpha" variant="brand" onclick={showtext}>
+    </lightning-button>
+
+    <lightning-button label="show number" variant="brand" onclick={shownumber}>
+    </lightning-button>
+
+  </div>
+  
+  <template if:true={istext}>
+    <p>abcdeefghijklm</p> 
+  </template>
+  <template if:true={isnum}>
+    1234567689
+</template>
+  
+</template>
