@@ -23,4 +23,14 @@ export default class CalculatorCmp extends LightningElement {
         alert('sub'+ sub);
     }
 
+    doMulti(){
+        const mul = parseInt(this.number1) * parseInt(this.number2);
+        alert('multi'+ mul);
+    }
+
+    doDiv(){
+        const div = parseInt(this.number1) / parseInt(this.number2);
+        alert('div'+ div);
+    }
+
 }

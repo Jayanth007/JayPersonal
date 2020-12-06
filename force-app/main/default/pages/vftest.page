@@ -1,0 +1,6 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <span style="font-size: 15px">Congratulations</span>
+  This is your new Page: vftest
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>
