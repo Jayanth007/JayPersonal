@@ -1,6 +1,6 @@
 <template>
     ]<div class="slds-m-around_small">
-        <lightning-card title="Calculator" icon-name="custom-custom34">
+        <lightning-card title="Calculator" icon-name="custom:custom34">
             <lightning-input value={number1} name = "number1" 
                 label="Number 1" placeholder="Input your number here" 
                 onchange={handleChangeEvent}>
@@ -20,6 +20,19 @@
             <lightning-button label="multi" onclick={doMulti}>
 
             </lightning-button>
+            <lightning-button label="div" onclick={doDiv}>
+
+            </lightning-button>
+            <div class="slds-m-around_small">
+                <template if:true={result}>
+                    Result is : 
+                    <lightning-formatted-number value={result} >
+
+                    </lightning-formatted-number>
+                </template>
+            </div>
+
+            
 
         </lightning-card>
 

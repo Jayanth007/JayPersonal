@@ -1,8 +1,10 @@
-import { LightningElement } from 'lwc';
+import { LightningElement,track } from 'lwc';
 
 export default class CalculatorCmp extends LightningElement {
     number1;
     number2;
+
+    @track result;
 
     handleChangeEvent(event){
         const val = event.target.value;
@@ -15,22 +17,26 @@ export default class CalculatorCmp extends LightningElement {
     }
     doSum(){
         const sum = parseInt(this.number1) + parseInt(this.number2);
-        alert('sum'+ sum);
+        //alert('sum'+ sum);
+        this.result =sum;
 
     }
     doSub(){
         const sub = parseInt(this.number1) - parseInt(this.number2);
-        alert('sub'+ sub);
+        //alert('sub'+ sub);
+        this.result = sub;
     }
 
     doMulti(){
         const mul = parseInt(this.number1) * parseInt(this.number2);
-        alert('multi'+ mul);
+        //alert('multi'+ mul);
+        this.result = mul;
     }
 
     doDiv(){
         const div = parseInt(this.number1) / parseInt(this.number2);
-        alert('div'+ div);
+        //alert('div'+ div);
+        this.result = div;
     }
 
 }
