@@ -19,7 +19,18 @@
     "@salesforce/eslint-config-lwc": "^0.4.0",
     "@salesforce/sfdx-lwc-jest": "^0.7.0",
     "eslint": "^5.16.0",
-    "prettier": "^1.19.1",
-    "prettier-plugin-apex": "^1.0.0"
-  }
+    "prettier": "1.19.1",
+    "prettier-plugin-apex": "1.7.0"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jayanth007/JayPersonal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jayanth007/JayPersonal/issues"
+  },
+  "homepage": "https://github.com/Jayanth007/JayPersonal#readme"
 }

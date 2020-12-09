@@ -1,0 +1,23 @@
+<template>
+    <div class="slds-m-around_small">
+        <lightning-input value={p} label="Principle Amount">
+
+        </lightning-input>
+        <lightning-input value={t} label="Term">
+
+        </lightning-input>
+        <lightning-input 
+            value={r}
+            type="number"
+            formatter="percent-fixed"
+            step="1" 
+            label="Interest Rate">
+
+        </lightning-input>
+        <lightning-button label="Caluculate" variant="brand" onclick={calculatesi}>
+
+        </lightning-button>
+
+    </div>
+    
+</template>

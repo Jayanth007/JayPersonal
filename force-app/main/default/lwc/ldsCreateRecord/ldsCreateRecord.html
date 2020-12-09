@@ -1,0 +1,14 @@
+<template>
+  <lightning-card title="lds Create Record">
+    <div class="slds-m-around_small">
+      <lightning-record-form
+        object-api-name={objectApiName}
+        columns="2"
+        mode="edit"
+        layout-type="Full"
+        onsuccess={handleSuccess}
+      >
+      </lightning-record-form>
+    </div>
+  </lightning-card>
+</template>

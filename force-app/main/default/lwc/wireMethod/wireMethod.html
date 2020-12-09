@@ -1,0 +1,15 @@
+<template>
+  <lightning-card title="Case Details" icon-name="standard:case">
+    <div class="slds-m-around_small">
+      <template for:each={records} for:item="ca">
+        <p key={ca.Id}>
+          {ca.Id}<br />
+          {ca.Status}
+        </p>
+      </template>
+      <template if:true={errors}>
+        there is an error while fetching the cases
+      </template>
+    </div>
+  </lightning-card>
+</template>
