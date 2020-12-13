@@ -8,3 +8,10 @@
 string tempvar = 'Enter_your_name_here';
 System.debug('Hello World!');
 System.debug('My name is ' + tempvar);
+
+Log l = Log.get();
+
+l.add('testing');
+l.add(new DMLException('DML exeption creaetd'));
+
+l.publish();
