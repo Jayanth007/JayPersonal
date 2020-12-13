@@ -2,11 +2,13 @@ public with sharing class CaseController {
   public CaseController() {
   }
   @AuraEnabled(cacheable=true)
-  public static list<case> getAllCases() {
+  public static list<Account> getAllCases(string param) {
     try {
-      List<case> caslist = [
-        SELECT id, subject, description, status, origin
-        FROM case
+      string key = '%' + param + '%';
+      List<account> caslist = [
+        SELECT id, Name, description
+        FROM Account
+        WHERE Name LIKE :key
       ];
       return caslist;
     } catch (Exception e) {

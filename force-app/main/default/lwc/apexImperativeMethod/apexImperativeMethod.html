@@ -1,0 +1,19 @@
+<template>
+  <lightning-card title="Apex Imperative Method" icon-name="standard:case">
+    <div class="slds-m-around_small">
+      <lightning-input
+        value={param}
+        label="Search Account by Name"
+        onchange={handleChange}
+      >
+      </lightning-input>
+      <div class="slds-m-around_small">
+        <template for:each={records} for:item="item">
+          <p key={item.Id}>
+            {item.Name}
+          </p>
+        </template>
+      </div>
+    </div>
+  </lightning-card>
+</template>
