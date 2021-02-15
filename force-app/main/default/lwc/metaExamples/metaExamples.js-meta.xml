@@ -11,13 +11,10 @@
         <target>lightningCommunity__Page</target>
         <target>lightning__Tab</target>
         <target>lightning__Inbox</target>
-
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__RecordPage">
             <property name="message" type="string"/>
-    
         </targetConfig>
-
     </targetConfigs>
 </LightningComponentBundle>

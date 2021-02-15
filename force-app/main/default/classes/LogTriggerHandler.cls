@@ -1,4 +1,5 @@
-public with sharing class LogTriggerHandler extends triggerHandler {
-  public LogTriggerHandler() {
-  }
+public with sharing class LogTriggerHandler {
+    public LogTriggerHandler() {
+
+    }
 }

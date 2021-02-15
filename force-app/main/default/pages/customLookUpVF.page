@@ -1,0 +1,24 @@
+<apex:page>
+    <apex:slds/>
+    <apex:includeLightning/>
+    <div id="container">
+
+
+    </div>
+    <script>
+        $Lightning.use('c:DisplayApp', function () {
+            $Lightning.createComponent(
+                'c:customLookup',
+                {
+                    ObjectApiName="Case",
+                    fiedlApiName="Subject",
+                    iconname="standard:case"
+                },
+                'container',
+                function (cmp) {
+                    console.log('component created');
+                }
+            )
+        });
+    </script>
+</apex:page>

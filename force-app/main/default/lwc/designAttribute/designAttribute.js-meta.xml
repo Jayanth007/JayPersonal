@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Design Attribute</masterLabel>
+    <targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__AppPage</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__HomePage">
+            <property name="message" type="string" label="Welcome Message"/>
+        </targetConfig>
+        <targetConfig targets="lightning__RecordPage, lightning__AppPage, lightningCommunity__Default">
+            <property name="height" type="Integer"/>
+            <property name="width" type="Integer"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
